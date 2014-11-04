@@ -1,0 +1,50 @@
+/* TRIGONOMETRIA */
+// degree vs radians
+
+void setup(){
+  size(400,400);
+  //background(0);
+}
+
+void draw(){
+  background(0);
+  int r = 1;
+  for(int deg=0; deg<360; deg=deg+(360/24)){
+    
+    float angle=radians(deg);
+    
+    // spirali grosse
+    float x = sin (angle+PI)*r + 200; 
+    float y = cos (angle+PI)*r + 200;
+    noStroke();
+    fill(r,deg/2,150);
+    ellipse(x,y,r,r);
+
+    x = sin (angle+PI/2)*r + 200; 
+    y = cos (angle+PI/2)*r + 200;
+    ellipse(x,y,r,r);
+    //
+    
+    float r2 = random(1,5);
+    
+    fill(255,255,255);
+    x = -sin (angle)*r + 200; 
+    y = cos (angle)*r + 200; 
+    ellipse(x,y,r2,r2);
+    
+    x = -sin (angle+PI)*r + 200; 
+    y = cos (angle+PI)*r + 200;
+    ellipse(x,y,r2,r2);
+
+    x = -sin (angle+PI/2)*r + 200; 
+    y = cos (angle+PI/2)*r + 200;
+    ellipse(x,y,r2,r2);
+
+    x = -sin (angle-PI/2)*r + 200; 
+    y = cos (angle-PI/2)*r + 200;
+    ellipse(x,y,r2,r2);
+    
+    r+=10;
+    
+  }
+}
